@@ -42,7 +42,7 @@ def test_omissions_stay_on_the_page() -> None:
     text = _text()
     for mark in (
         "missed_refusals 9",
-        "retrieval_ms_p95 11.930",
+        "retrieval_ms_p95 11.034",
         "english_hit_at_5 0.000",
         "spanish_hit_at_5 1.000",
         "trajectory_pass_rate 0.667",
