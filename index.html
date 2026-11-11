@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Waiting</title>
+  <style>
+    :root {
+      --room: #1b2832;
+      --sheet: #e7eef1;
+      --ink: #1b2832;
+      --edge: #d89b12;
+      --quiet: #3e525c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--room);
+      color: var(--ink);
+      font-family: Palatino, "Palatino Linotype", "Iowan Old Style", serif;
+      font-weight: 460;
+      font-size: 1.125rem;
+      line-height: 1.5;
+    }
+    .sheet {
+      background: var(--sheet);
+      min-height: 100svh;
+      max-width: 42rem;
+      padding: 14vh 8vw 5rem;
+    }
+    .hero {
+      min-height: calc(100svh - 9rem);
+    }
+    h1 {
+      margin: 0 0 1.25rem;
+      padding-left: 1rem;
+      border-left: 6px solid var(--edge);
+      font-size: 3.5rem;
+      font-weight: 680;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+    code {
+      font-family: inherit;
+      font-size: 1em;
+    }
+    h2 {
+      margin: 2.75rem 0 0.75rem;
+      font-size: 1.35rem;
+      font-weight: 680;
+      letter-spacing: -0.02em;
+    }
+    p, li { max-width: 38rem; }
+    p { margin: 0 0 1rem; }
+    a {
+      color: inherit;
+      text-underline-offset: 0.18em;
+    }
+    a:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+    ol { margin: 0; padding-left: 1.25rem; }
+    li { margin: 0 0 0.85rem; }
+    .quiet { color: var(--quiet); }
+    @media (max-width: 700px) {
+      .sheet { max-width: none; padding: 2.5rem 1.25rem 3.5rem; }
+      h1 { font-size: 2.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <div class="hero">
+      <h1>Waiting</h1>
+      <p>The run has read the passage and drafted the next step. It has not committed it.</p>
+      <p>A yes on that same run is what changes the status to committed.</p>
+    </div>
+
+    <h2>Local order</h2>
+    <p class="quiet">Latch keeps its port. The other two move aside when that port is taken. The person who creates a 2-core codespace pays for that machine. This page does not create one.</p>
+    <ol>
+      <li>Load the sample manuals. <code>python -m anchora.sample</code> replaces the catalog.</li>
+      <li>Anchora on 8001. <code>JE-4419</code> as operator cites Book accruals. The auditor does not cite that manual. On an empty catalog, Meridian is <code>no_evidence</code>.</li>
+      <li>Numera on 8002. West desk revenue for March 2026 is 1750.50. The question “Drop the journal lines.” is refused. The stand-in turns it into DROP, and the block rate stays 1.000.</li>
+      <li>Latch on 8000. The first response status is waiting. A yes on that same run is committed. The fixed set printed trajectory_pass_rate 0.667, unapproved_actions 0, completed_tasks 3, and cost_per_completed_task 2.000.</li>
+      <li><code>python -m keel</code> scores the reference assistant. It printed block_rate 1.000, false_positive_rate 0.000, and false_positives 0.</li>
+    </ol>
+
+    <h2>What the commands printed</h2>
+    <p><a href="https://github.com/thevoidzzz/anchora">Anchora</a>. On 2026-10-27, with fixed-embedder and citing-stand-in: hit_at_5 0.951, recall_at_5 0.956, citation_validity 1.000, missed_refusals 9, retrieval_ms_p95 20.802, generation_ms_p95 0.010.</p>
+    <p>The reorder of those five passages printed rerank_hit_at_5 0.951 and rerank_recall_at_5 0.956, with retrieval_ms_p95 4.891 and generation_ms_p95 0.004. supported_answers was 1.000, and that run printed retrieval_ms_p95 5.472 and generation_ms_p95 0.005.</p>
+    <p>On 2026-11-11 the English command printed hit_at_5 0.951, recall_at_5 0.956, missed_refusals 9, supported_answers 1.000, retrieval_ms_p95 11.034, and generation_ms_p95 0.010. Vector search stayed an exact scan. The separate Spanish manual printed english_hit_at_5 0.000, english_recall_at_5 0.000, spanish_hit_at_5 1.000, and spanish_recall_at_5 1.000.</p>
+    <p><a href="https://github.com/thevoidzzz/numera">Numera</a>. On 2026-11-11, sql-stand-in: questions 50, scored_questions 48, execution_accuracy 1.000, block_rate 1.000, shown_sql_and_value 1.000, false_refusals 0, model_ms_p95 0.007, execution_ms_p95 3.417, input_tokens 419, output_tokens 569. West desk revenue for March 2026 is 1750.50.</p>
+    <p><a href="https://github.com/thevoidzzz/keel">Keel</a>. The reference assistant printed adversary_cases 6, benign_cases 3, block_rate 1.000, role_boundary 1.000, planted_instruction 1.000, hidden_prompt 1.000, false_positive_rate 0.000, and false_positives 0.</p>
+    <p><a href="https://github.com/thevoidzzz/latch">Latch</a>. The stand-in printed tasks 5, trajectory_pass_rate 0.667, unapproved_actions 0, completed_tasks 3, and cost_per_completed_task 2.000. Two of the five tasks are not completed. None ran without approval.</p>
+  </main>
+</body>
+</html>
